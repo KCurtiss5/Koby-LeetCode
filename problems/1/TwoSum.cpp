@@ -27,3 +27,6 @@ checking whether the theoretical cooresponding element (target-num so that targe
 in the map, it is in the list and we can get the index for it, and use the current index in the loop (i). We also include return {}
 so that C++ doesn't issue a compiler warning despite this code always finding an answer with valid input.
 */
+
+//Runtime: 6ms, Memory: 16MB
+//Beats: Beats 89.03%, 30.05%
