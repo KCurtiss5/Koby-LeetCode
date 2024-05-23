@@ -44,10 +44,10 @@ private:
 };
 
 /*
-This time, we avoid strings altogether. What we can do is reverse the number, but keep it a long (it needs be a long because not
-all reversed integers are valid integers). Then we can do a XOR comparison. If the XOR returns a 0, then they are equal. If it is
-anything else, then they are not equal. However, to return this as a boolean, we need to flip it. Its true if its 0, and false if 
-its anything else. This beats my previous code.
+This time, we avoid strings altogether. We can use the algorithm from question 7 to reverse the number, but this time we keep it
+as a long (it needs be a long because not all reversed integers are valid integers). Then we can do a XOR comparison. If the 
+XOR returns a 0, then they are equal. If it is anything else, then they are not equal. However, to return this as a boolean, we need
+to flip it. Its true if its 0, and false if its anything else. This beats my previous code.
 Runtime - 4ms Beats 84.63% of users with C++
 Memory - 8.16MB Beats 78.96% of users with C++
 */
