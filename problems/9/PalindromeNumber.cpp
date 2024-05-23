@@ -24,3 +24,30 @@ Memory - 10.48MB Beats 11.28%of users with C++
 But there's a better way!
 Let see if we can keep using integers and use a bit operation!
 */
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        int rev = reverseNum(x);
+        return !(x^rev);
+    }
+
+private:
+    long reverseNum(int x){
+        long rev = 0;
+        while (x > 0) {
+            rev = rev * 10 + x % 10;
+            x /= 10;
+        }
+        return rev;
+    }
+};
+
+/*
+This time, we avoid strings altogether. What we can do is reverse the number, but keep it a long (it needs be a long because not
+all reversed integers are valid integers). Then we can do a XOR comparison. If the XOR returns a 0, then they are equal. If it is
+anything else, then they are not equal. However, to return this as a boolean, we need to flip it. Its true if its 0, and false if 
+its anything else. This beats my previous code.
+Runtime - 4ms Beats 84.63% of users with C++
+Memory - 8.16MB Beats 78.96% of users with C++
+*/
