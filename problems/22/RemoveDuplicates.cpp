@@ -20,4 +20,9 @@ Its pretty slow:
 Runtime - 55ms Beats 5.30% of users with C++
 Memory - 21.00MB Beats 91.17% of users with C++
 We have to remove the duplicates IN-PLACE. So no tricks like creating a set with the vector and returning the size of the set.
+
+Why is this slow? Because nums.erase() does a lot! First it has to identify, then delete the integer. Then it shifts over all 
+elements one to the left (this is the troublemaker). The cppreference page literally states this process is inefficient.
+Then it updates vector.size() and returns an iterator. If we can do this without .erase, it will be much faster.
 */
+
