@@ -12,3 +12,12 @@ public:
         return nums.size();
     }
 };
+
+/*
+This uses a simple algorithm that just loops through the vector and when it detects a duplicate, uses the standard vector operation
+erase to remove it. Then ofc, we have to decrement i. Then we just return the size. This works, but is there a better solution?
+Its pretty slow:
+Runtime - 55ms Beats 5.30% of users with C++
+Memory - 21.00MB Beats 91.17% of users with C++
+We have to remove the duplicates IN-PLACE. So no tricks like creating a set with the vector and returning the size of the set.
+*/
