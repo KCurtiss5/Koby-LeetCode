@@ -26,3 +26,25 @@ elements one to the left (this is the troublemaker). The cppreference page liter
 Then it updates vector.size() and returns an iterator. If we can do this without .erase, it will be much faster.
 */
 
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int j = 1;
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] != nums[i - 1]){
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        nums.resize(j);
+        return j;
+    }
+};
+
+
+/*
+This algorithm uses what is essentially two pointers to copy elements in order. Then once we are done, we can resize the
+vector to j (which is how many unique elements there are). Since this avoids vector.erase(), it is much faster.
+Runtime - 5ms Beats 78.41% of users with C++
+Memory - 21.18MB Beats 29.61% of users with C++
+*/
