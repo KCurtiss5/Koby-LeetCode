@@ -38,7 +38,7 @@ public:
         map<int, int> freq;
         for (auto num : heights){
             freq[num]++; //[] implicit insert with postincrement
-            max = (max + num + abs(max-num))/2; //branchess max
+            max = (max + num + abs(max-num))/2; //branchless max
         }
         int i, j = 0;
         while (i <= max){
