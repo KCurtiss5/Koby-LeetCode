@@ -30,3 +30,35 @@ For this attempt, I can essentially count the frequency of each integer. Then we
 expected versus the actual.
 */
 
+class Solution {
+public:
+    int heightChecker(vector<int>& heights) {
+        int max = 0;
+        int wrong = 0;
+        map<int, int> freq;
+        for (auto num : heights){
+            freq[num]++; //[] implicit insert with postincrement
+            max = (max + num + abs(max-num))/2; //branchess max
+        }
+        int i, j = 0;
+        while (i <= max){
+            if (freq[i] == 0){
+                i++;
+                continue;
+            }
+            if(heights[j] != i){
+                wrong++;
+            }
+            j++;
+            freq[i]--;
+        }
+        return wrong;
+    }
+};
+
+/*
+This uses a frequency map. It determines what heights[j] should be in a sorted order, and if its not that, then increments wrong.
+Funny enough its slower.
+Runtime - 5ms Beats 31.17% of users with C++
+Memory - 10.82MB Beats 10.73% of users with C++
+*/
