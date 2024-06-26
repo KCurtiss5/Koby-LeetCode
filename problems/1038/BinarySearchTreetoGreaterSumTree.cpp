@@ -26,7 +26,7 @@ private:
 
 /*
 Understanding how binary search trees work is crucial to seeing this elegant solution. You can watch the video to understand:
-
+https://drive.google.com/file/d/1VL5wmm41LtGhKJXEIRtp8B1kEtA7Ring/view?usp=sharing
 Runtime - 0ms Beats 100.00%
 Memory - 10.21MB Beats 12.60%
 */
