@@ -35,3 +35,44 @@ There are six instances where subtraction is used:
 However, this code will return 99 for IC despite IC not being valid. For 99, you need to write XCIX.
 So lets fix that.
 */
+
+
+#include <stdexcept>
+
+class Solution {
+public:
+    int romanToInt(string s) {
+        int sum = 0;
+        map<char, int> roman { 
+            {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}
+        };
+        for (int i = 0; i < s.length()-1; i++){
+            int j = roman[s[i]];
+            int k = roman[s[i+1]];
+            if (j < k){
+                if (j == 1 && (k == 5 || k == 10)){
+                    sum -= 1;
+                }
+                else if (j == 10 && (k == 50 || k == 100)){
+                    sum -= 10;
+                }
+                else if (j == 100 && (k == 500 || k == 1000)){
+                    sum -= 100;
+                }
+                else {
+                    throw invalid_argument("invalid roman numeral");
+                }
+            }
+            else {
+                sum += roman[s[i]];
+            }
+        }
+        sum += roman[s[s.length()-1]];
+        return sum;
+    }
+};
+
+/*
+This now handles invalid roman numerals like IC. However, we can see repeated code. its WET - WET (Write Everything Twice) 
+and DRY (Don't Repeat Yourself). So lets be DRY.
+*/
