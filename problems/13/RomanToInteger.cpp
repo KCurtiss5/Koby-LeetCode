@@ -107,3 +107,7 @@ public:
         return sum;
     }
 };
+
+/*
+It isn't worth giving the stats for this. It is both slower & uses more memory than the first solution, however it validates inputs!
+*/
