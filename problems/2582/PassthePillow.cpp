@@ -45,4 +45,6 @@ ans = n-t
 else:
 ans = t+1
 
+Runtime - 2ms Beats 53.64%
+Memory - 6.99MB Beats 96.78%
 */
