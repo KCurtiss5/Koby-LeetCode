@@ -37,3 +37,24 @@ However, this is slow.
 Runtime - 612ms Beats 5.03%
 Memory - 277.25MB Beats 5.00%
 */
+
+/*
+I switched to a slightly faster and more readable data structure in an unordered_map.
+*/
+
+bool validSubstring(const string& s){
+        unordered_map<char, int> c;
+        for (char letter: s){
+            if (c.contains(letter)){
+                return false;
+            }
+            c.insert({letter, letter});
+        }
+        return true;
+    }
+
+/*
+Runtime - 567ms Beats 5.46%
+
+So... no meaningful improvement. Lets take another look at my algorithm.
+*/
