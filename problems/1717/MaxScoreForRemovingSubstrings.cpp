@@ -36,5 +36,11 @@ private:
 This was my first attempt. It technically works, however it fails as a submission because time exceeded. This is because s.find()
 is linear and.. ultimately.. too slow.
 
+However, what it does is it greedily checks for the most valuable string first, if it finds it, then it adds the score and checks
+again. If it doesn't find it, then it checks for the second most valuable string. If it can't find either, then you know that
+you're done and it returns the score.
+
+This is a very intuitive solution, but slow. 
+
 So we need a better solution that is less reliant on the string.find() function.
 */
