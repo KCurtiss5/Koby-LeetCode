@@ -33,4 +33,7 @@ which uses the fact that we're only looking for the length of the longest. So wh
 is one higher than the longest known substring and check whether its valid. If not, then we can move one letter forward and check
 again. Once we are at a place where the start+window_size is longer than the string, we can't have a longer substring, so we stop.
 However, this is slow.
+
+Runtime - 612ms Beats 5.03%
+Memory - 277.25MB Beats 5.00%
 */
