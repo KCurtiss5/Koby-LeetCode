@@ -22,3 +22,27 @@ It can be done a bit faster with a different algorithm. First I thought about sw
 multiple times. However, I dont even need to swap since we're removing the element anyways, so we can flat out replace it.
 
 */
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int cur = 0;
+        int end = nums.size();
+        
+        while (cur < end) {
+            if (nums[cur] == val) {
+                nums[cur] = nums[end - 1];
+                end--;
+            } else {
+                cur++;
+            }
+        }
+        
+        nums.resize(end);
+        return end;
+    }
+};
+
+/*
+This solution is more elegant. It avoids erase altogether and would end up being significantly faster with longer lists.
+*/
