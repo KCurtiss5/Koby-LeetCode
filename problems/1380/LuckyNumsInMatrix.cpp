@@ -26,4 +26,6 @@ in its column, then we append to lucky and return it. This is a naive solution.
 
 Runtime - 16ms Beats 56.54% O(M*N)
 Memory - 14.97MB Beats 5.02%
+
+There are probably more elegant solutions.
 */
