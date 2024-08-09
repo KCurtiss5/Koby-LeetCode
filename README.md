@@ -1,2 +1,4 @@
 # Koby-LeetCode
-All LeetCode problems done in C++
+All the LeetCode problems I've completed in C++.
+
+Total : **27** problems
