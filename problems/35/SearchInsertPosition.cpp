@@ -30,4 +30,22 @@ But we can improve this! I completely forgot that you can also exclude the curre
 Replace with end = index-1; start = index+1;
 */
 
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        //binary search
+        int start = 0;
+        int end = nums.size();
+        int index = nums.size()/2;
 
+        while (end-start > 1){
+            if (nums[index] == target) return index;
+            else if (nums[index] > target) end = index-1;
+            else start = index;
+            index = (end + start) / 2;
+        }
+
+        if (target > nums[index]) return index+1;
+        return index;
+    }
+};
