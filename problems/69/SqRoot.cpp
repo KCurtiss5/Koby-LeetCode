@@ -55,3 +55,28 @@ This is newtons approximation algorithm. With every iteration, we can get closer
 Runtime - 3ms Beats 40.18% O(1)
 Memory - 8.40MB Beats 10.39%
 */
+
+class Solution {
+public:
+    int mySqrt(int x) {
+        if (x == 0) return 0;
+        if (x == 1) return 1;
+
+        int start = 1;
+        int end = x/2;
+        int res = 0;
+
+        while (start <= end) {
+            int mid = start + ((end-start)/2);
+            if (mid<=x/mid){
+                start = mid+1;
+                res=mid;
+            }
+            else {
+                end=mid-1;
+            }
+        }
+
+        return res;
+    }
+};
