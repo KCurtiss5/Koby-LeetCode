@@ -80,3 +80,7 @@ public:
         return res;
     }
 };
+
+/*
+Finally we have a binary search implementation. This is actually slower than the newtonian estimate above. So the best I could do is 3ms.
+*/
