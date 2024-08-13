@@ -35,4 +35,23 @@ we can make that work just fine. If it's a perfect, square we can just continue 
 This does pass all tests because there is never a risk of integer overflow.
 Runtime - 12ms Beats 14.32%
 Memory - 8.43MB Beats 10.03%
+
+Lets take a more advanced math approach to this, however.
+*/
+
+class Solution {
+public:
+    int mySqrt(int x) {
+        double n = 1;
+        for (int i = 0; i < 20; i++) { //20 passed all test cases
+            n = n-(((pow(n,2))-x)/(2*n)); //newtons algorithm
+        }
+        return floor(n);
+    }
+};
+
+/*
+This is newtons approximation algorithm. With every iteration, we can get closer to the real answer.
+Runtime - 3ms Beats 40.18% O(1)
+Memory - 8.40MB Beats 10.39%
 */
