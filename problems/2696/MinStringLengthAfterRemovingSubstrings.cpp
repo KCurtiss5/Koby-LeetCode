@@ -19,3 +19,26 @@ Runtime- 21ms Beats 5.05%
 Memory - 15.40MB Beats 5.05%
 This is super slow because find is looking through the entire string over and over again. Let's try something better.
 */
+
+class Solution {
+public:
+    int minLength(string s) {
+        int i = 0;
+        while (i < s.length()) {
+            if ((i + 1 < s.length() && s[i] == 'A' && s[i + 1] == 'B') || 
+                (i + 1 < s.length() && s[i] == 'C' && s[i + 1] == 'D')) {
+                s = s.substr(0, i) + s.substr(i + 2);
+                if (i > 0) --i;
+            } else {
+                ++i;
+            }
+        }
+        return s.length();
+    }
+};
+
+/*
+This only loops through once! Saves a ton of time searching through the string. But if we're doing this, we can just use a stack!
+Runtime- 19ms Beats 5.57%
+Memory- 15.24MB Beats 5.05%
+*/
