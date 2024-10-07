@@ -42,3 +42,26 @@ This only loops through once! Saves a ton of time searching through the string. 
 Runtime- 19ms Beats 5.57%
 Memory- 15.24MB Beats 5.05%
 */
+
+class Solution {
+public:
+    int minLength(string s) {
+        stack<char> st;
+
+        for (char c : s) {
+            if ((st.top() == 'A' && c == 'B') || (st.top() == 'C' && c == 'D')) {
+                st.pop();
+            } else {
+                st.push(c);
+            }
+        }
+
+        return st.size();
+    }
+};
+
+/*
+This is the next logical step. Lets just use a stack instead. This is much faster.
+Runtime - 6ms Beats 57.32%
+Memory - 11.60MB Beats 31.24%
+*/
